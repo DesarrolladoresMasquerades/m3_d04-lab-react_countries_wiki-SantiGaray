@@ -18,7 +18,12 @@ function App() {
     .then((response) => {
       setCountries(response.data)
     })
-  }, []);
+  }, []); // Lo que va dentro del [] me dice que cada vez que eso cambie, 
+          // se actualizará el State. Por ejemplo si dijera countryID entonces 
+          // cada vez que la countryID cambiase EN LA URL entonces volveria a recargar 
+          // el State(countryList) con toda la API. En este caso no es necesario porque ya 
+          // tengo cargada toda la API en dicho State. en el caso de algo mas pequeño si serviria porque traigo solo eso, 
+          // ejemplo userID y cada vez que el userID cambie en la URL entonces me recargara el State con el User desde la DB.
 
   
 

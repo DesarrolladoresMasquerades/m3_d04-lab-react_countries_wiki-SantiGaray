@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 export default function CountryDetails(props) {
     const {countryId} = useParams()
-    const country = props.countries.find((country)=>country.alpha3Code === countryId)
+    const country = props.countries.find((country)=>country._id === countryId)
 
   return (
     <div>
@@ -17,7 +17,7 @@ export default function CountryDetails(props) {
       <h3>Borders:</h3>
         <ul>{country.borders.map((border)=>{
             const borderCountry = props.countries.find((country)=>country.alpha3Code === border )
-            return (<li key={"id" + border}><Link to={"/" + border}>{borderCountry.name.official}</Link></li>
+            return (<li key={borderCountry._id}><Link to={"/" + borderCountry._id }>{borderCountry.name.official}</Link></li>
         
         )}
         )}

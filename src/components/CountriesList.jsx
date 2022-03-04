@@ -7,7 +7,7 @@ export default function CountriesList(props) {
       <div className="country">
         {props.countries.map((country)=>{
             return(
-                <Link key={country._id}  to={`/${country.alpha3Code}`}>
+                <Link key={country._id}  to={`/${country._id}`}>
                     <img
                         src={`https://flagpedia.net/data/flags/w580/${country.alpha2Code.toLowerCase()}.png`}
                         alt=""
